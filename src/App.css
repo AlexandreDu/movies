@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #fecc00;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  list-style: none;
+  padding: 0;
+}
+main {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 20px;
+}
+/* MoviesList */
+.movies-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  width: 60%;
+  margin: 0 auto;
+}
+/* Filter */
+.filter-wrapper {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  border-radius: 2px;
+  font-weight: bold;
+ 
+}
+.year-check {
+  margin-left: 3px;
+  margin-right: 13px;
+}
+.filter-limiter {
+  margin-left: 3px;
+  margin-right: 13px;
+}
+/* Movie */
+.movie-wrapper {
+  width: 32%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: #fefee2;
+  box-shadow: 1px 1px 1px grey;
+}
+.movie-image {
+  display: block;
+  max-width: 100%;
+}
+.icons {
+  color: #f0b63a;
+  margin-right: 10px;
+}
+.movie-vote-count, .movie-vote-average {
+
 }
 
-.App-link {
-  color: #61dafb;
+.movie-button {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  border: 2px solid #f0b63a;
+  border-radius: 2px;
+  margin: 0 auto;
+  background-color:#fecc00;
+  font-weight: bold;;
+  color: #ffffff;
+  font-size: 1.05rem;
+  -webkit-user-select: none; 
+  -webkit-touch-callout: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
+.movie-button-container a {
+  color: #ffffff;
+  width: 150px;
+}
+/* Pagination */
+.current-page {
+  color: #ffffff;
+  font-weight: bold;
+}
+.page, .current-page {
+  margin: 5px;
+ 
+}
+.direction-buttons-wrapper {
+  margin-top: 20px;
+  display: flex;
+}
+.direction-button {
+  width: 150px;
+  padding: 10px;
+  border: 2px solid #fecc00;
+  border-radius: 2px;
+  margin: 0 auto;
+  background-color:#ffffff;
+  font-weight: bold;
+  color: #fecc00;
+  cursor: pointer;
+  -webkit-user-select: none; 
+  -webkit-touch-callout: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;  
+  font-size: 1.05rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* SingleMoviePage */
+.single-movie-page-wrapper {
+  width: 60%;
+}
+.menu-single-movie-wrapper {
+  width: 100%;
+  margin-bottom: 0;
+
+}
+.menu-single-movie-item {
+  border: 0.1px solid #e6e8e3;
+  width: calc(100% / 4);
+  text-align: center;
+  background-color: #ffffff;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fecc00;
+}
+
+.single-movie-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  height: 470px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.similar-movies-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 0 30px 0
+}
+.similar-movie-wrapper {
+  width:24%;
+  margin-right: 10px;
+}
+.similar-movie-title-wrapper {
+  height: 36px;
+}
+.similar-movie-image {
+  display: block;
+  max-width: 100%;
+}
+/* menu single movie page */
+.menu-single-movie-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width : 1500px) {
+  /* Movies */
+  .movies-wrapper {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Filter */
+}
+
+@media only screen and (max-width : 1000px) {
+  .movie-wrapper {
+    width: 32%;
   }
+}
+
+@media only screen and (max-width : 840px) {
+  .movie-wrapper {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width : 667px) {
+  .movies-wrapper {
+    width: 70%;
+  }
+  .movie-wrapper {
+    width: 100%;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .movies-wrapper {
+    width: 90%;
+  }
+  
 }
