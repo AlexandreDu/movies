@@ -252,7 +252,7 @@ main {
 @media only screen and (max-width : 1666px) {
   /* SimilarMovies */
   .similar-movie-wrapper {
-    width: 48%;
+    width: 48.8%;
   }
 }
 
@@ -260,6 +260,11 @@ main {
   /* Movies */
   .movies-wrapper {
     width: 90%;
+  }
+
+  /* SimilarMovies */
+  .similar-movie-wrapper {
+    width: 48.45%;
   }
 
   /* Filter */
@@ -271,7 +276,7 @@ main {
   .single-movie-wrapper {
     align-items: start;
     justify-content: center;
-    height: 363px;
+    height: auto;
   }
   /* Synopsis */
   .synopsis-image-wrapper {
@@ -284,6 +289,10 @@ main {
 
   .synopsis-overview-wrapper p {
     line-height: 20px;
+  }
+  /* SimilarMovies */
+  .similar-movie-wrapper {
+    width: 48%;
   }
   
 }

@@ -3,7 +3,6 @@ import React from "react";
 export const SingleMovieMenu = ({handleClick, activeContent}) => {
 
 
-    
     const activeItemClass = "menu-current-item"
     const itemClass = "menu-single-movie-item"
     return (
