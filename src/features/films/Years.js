@@ -14,9 +14,9 @@ export const Years = () => {
     }).sort((a, b) =>  a - b )
     const yearsUniques = [...new Set(yearsNotUniquesSorted)]
 
-    const renderYearsUniques = yearsUniques.map(element => {
+    const renderYearsUniques = yearsUniques.map((element, index) => {
         return  (
-            <label>
+            <label key={index}>
                 {element}
                 <input 
                     type="checkbox"
@@ -43,7 +43,7 @@ export const Years = () => {
     }
 
     return (
-        <div>
+        <div className="years-filter-wrapper">
             {renderYearsUniques}
             
         </div>

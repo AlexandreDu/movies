@@ -36,7 +36,7 @@ export const MoviesList = () => {
         }
        
         return moviesList.slice(indexStart, indexEnd).map(movie => (
-            <Movie movie={movie} />
+            <Movie key={movie.id} movie={movie} />
         ))           
     }
 

@@ -15,19 +15,19 @@ export const SimilarMovies = ({movie}) => {
             setSimilarMovies(data.results)
         })
 
-    }, [])
+    }, [movie.id])
 
     return (
         <section>
-            <h4>Vous devriez aimez les films suivants :</h4>
+            <h4>Vous devriez aimer les films suivants :</h4>
             <div className="similar-movies-wrapper">
-                {similarMovies.map(similarMovie => {
+                {similarMovies.map((similarMovie, index) => {
                     return (
-                        <div className="similar-movie-wrapper">
+                        <div key={index} className="similar-movie-wrapper">
                             <div className="similar-movie-title-wrapper">
                                 <h4 className="similar-movie-title">{similarMovie.original_title}</h4>
                             </div>
-                            <img className="similar-movie-image" src={`https://image.tmdb.org/t/p/w500/${similarMovie.backdrop_path}`} alt={similarMovie.original_title} />
+                                <img className="similar-movie-image" src={`https://image.tmdb.org/t/p/w500/${similarMovie.backdrop_path}`} alt={similarMovie.original_title} />
                         </div>
                     )
                 })}

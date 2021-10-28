@@ -4,6 +4,9 @@
 body {
   background-color: #fecc00;
 }
+h1 {
+  margin : 0;
+}
 a {
   text-decoration: none;
 }
@@ -11,6 +14,25 @@ ul {
   list-style: none;
   padding: 0;
 }
+/* Navbar */
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ffffff;
+}
+.logo-wrapper {
+  width: 100px;
+}
+.logo {
+  display: block;
+  max-width: 100%;
+}
+.nav-link a{
+  color: #000000;
+  font-weight: bold;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -29,12 +51,20 @@ main {
 /* Filter */
 .filter-wrapper {
   display: flex;
+  justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 15px;
   border-radius: 2px;
   font-weight: bold;
  
 }
+.years-filter-wrapper {
+  width: 50%; 
+}
+.years-filter-wrapper label{
+  white-space: nowrap;
+}
+
 .year-check {
   margin-left: 3px;
   margin-right: 13px;
@@ -49,21 +79,20 @@ main {
   padding: 10px;
   margin-top: 10px;
   margin-right: 10px;
-  background: #fefee2;
+  background: #ffffff;
   box-shadow: 1px 1px 1px grey;
 }
 .movie-image {
   display: block;
   max-width: 100%;
 }
+.movie-title-wrapper {
+  height: 42px;
+}
 .icons {
   color: #f0b63a;
   margin-right: 10px;
 }
-.movie-vote-count, .movie-vote-average {
-
-}
-
 .movie-button {
   display: block;
   width: 150px;
@@ -81,14 +110,36 @@ main {
   -ms-user-select: none; 
   user-select: none; 
 }
+
+.movie-button-container {
+  padding: 20px 0 20px;
+}
 .movie-button-container a {
   color: #ffffff;
   width: 150px;
 }
+/* css transition group effect on Movie */
+.opacite-appear {
+  opacity: 0;
+
+}
+.opacite-appear-done {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
 /* Pagination */
 .current-page {
   color: #ffffff;
   font-weight: bold;
+}
+.page {
+  cursor: pointer;
+  -webkit-user-select: none; 
+  -webkit-touch-callout: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;  
 }
 .page, .current-page {
   margin: 5px;
@@ -116,9 +167,16 @@ main {
   font-size: 1.05rem;
 }
 
-/* SingleMoviePage */
+/* SingleMoviePage (single movie + similarmovies) */
 .single-movie-page-wrapper {
   width: 60%;
+}
+
+/* SingleMovieMenu */
+.menu-single-movie-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .menu-single-movie-wrapper {
   width: 100%;
@@ -126,32 +184,62 @@ main {
 
 }
 .menu-single-movie-item {
-  border: 0.1px solid #e6e8e3;
-  width: calc(100% / 4);
+  width: calc(100% / 2);
+  text-align: center;
+  background-color: #fecc00;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffffff;
+}
+.menu-current-item {
+  width: calc(100% / 2);
   text-align: center;
   background-color: #ffffff;
   padding: 15px;
   font-weight: bold;
   cursor: pointer;
-  color: #fecc00;
+  color: black;
 }
 
 .single-movie-wrapper {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: start;
   align-items: center;
-  height: 470px;
+  height: 330px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  background-color: white;
 }
+.synopsis-image-wrapper {
+  width: 49%;
+}
+.synopsis-overview-wrapper {
+  width: 49%;
+  padding: 20px;
+}
+.synopsis-overview-wrapper p {
+  line-height: 22px;
+}
+
+/* Info */
+.logo-company-wrapper {
+  display: block;
+  width: 150px;
+}
+.logo-company {
+  max-width: 100%;;
+}
+
+/* SimilarMovies */
 .similar-movies-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 30px 0 30px 0
+  padding: 10px 0 30px 0
 }
 .similar-movie-wrapper {
-  width:24%;
+  width: 24%;
   margin-right: 10px;
 }
 .similar-movie-title-wrapper {
@@ -161,11 +249,11 @@ main {
   display: block;
   max-width: 100%;
 }
-/* menu single movie page */
-.menu-single-movie-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+@media only screen and (max-width : 1666px) {
+  /* SimilarMovies */
+  .similar-movie-wrapper {
+    width: 48%;
+  }
 }
 
 @media only screen and (max-width : 1500px) {
@@ -177,6 +265,30 @@ main {
   /* Filter */
 }
 
+@media only screen and (max-width : 1100px) {
+
+  /* SingleMovieContentWrapper */
+  .single-movie-wrapper {
+    align-items: start;
+    justify-content: center;
+    height: 363px;
+  }
+  /* Synopsis */
+  .synopsis-image-wrapper {
+    width: 300px;
+  }
+  .synopsis-overview-wrapper {
+    padding-left: 10px;
+    width: 100%;
+  }
+
+  .synopsis-overview-wrapper p {
+    line-height: 20px;
+  }
+  
+}
+
+
 @media only screen and (max-width : 1000px) {
   .movie-wrapper {
     width: 32%;
@@ -187,19 +299,44 @@ main {
   .movie-wrapper {
     width: 48%;
   }
+  /* singleMovieContentWrapper */
+  .single-movie-wrapper {
+    justify-content: center;
+  }
+  /* Synopsis */
+  
+  .synopsis-image-wrapper {
+    width: 300px;
+  }
+  /* SimilarMovies */
+  .similar-movie-wrapper {
+    width: 47.5%;
+  }
 }
 
 @media only screen and (max-width : 667px) {
+  /* filter */
+  .filter-wrapper {
+    width: 67%;
+  }
   .movies-wrapper {
     width: 70%;
   }
   .movie-wrapper {
     width: 100%;
   }
+  /* SimilarMovies */
+  .similar-movie-wrapper {
+    width: 100%;
+  }
 }
 @media only screen and (max-width : 480px) {
   .movies-wrapper {
     width: 90%;
+  }
+
+  .single-movie-page-wrapper {
+    width: 80%;
   }
   
 }

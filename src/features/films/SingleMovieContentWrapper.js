@@ -1,15 +1,16 @@
-import React, { useState } from "react" 
-import { SingleMovieContentOne } from "./SingleMovieContentOne";
-import { SingleMovieContentTwo } from './SingleMovieContentTwo'
-export const SingleMovieContentWrapper = ({movieIdParsed, isActive}) => {
+import React, { useState, useEffect } from "react" 
+import { Synopsis } from "./Synopsis";
+import { Info} from './Info'
 
- 
+export const SingleMovieContentWrapper = ({movieIdParsed, activeContent}) => {
+
+    
+
     return (
         <section className="single-movie-wrapper">
-                <SingleMovieContentOne isActive={isActive} movieIdParsed={movieIdParsed} />
-                <SingleMovieContentTwo isActive={isActive} movieIdParsed={movieIdParsed} />
+                <Synopsis activeContent={activeContent} movieIdParsed={movieIdParsed} contentTopic="synopsis" />
+                <Info activeContent={activeContent} movieIdParsed={movieIdParsed} contentTopic="info" />
         </section>
-
 
 
     )

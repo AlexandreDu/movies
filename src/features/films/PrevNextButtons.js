@@ -35,6 +35,11 @@ export const PrevNextButtons = ({moviesQuantity}) => {
         console.log(e.target.name)
         const direction = e.target.name
         dispatch(changePage(direction))
+        
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
     }
     return (
         <div className="direction-buttons-wrapper">
