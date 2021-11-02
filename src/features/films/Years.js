@@ -24,7 +24,7 @@ export const Years = () => {
                     value={element}
                     name={element}
                     onChange={(e) => handleChange(e)}
-                    checked={inputFilters.element}
+                    checked={inputFilters[element]}
                 />
             </label>
             )
