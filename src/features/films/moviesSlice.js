@@ -48,7 +48,7 @@ const moviesSlice = createSlice({
 
         },
         clearFilter(state, action) {
-            console.log('yuut')
+
             state.filters.years = []
         }
 

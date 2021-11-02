@@ -15,6 +15,7 @@ export const Years = () => {
     const yearsUniques = [...new Set(yearsNotUniquesSorted)]
 
     const renderYearsUniques = yearsUniques.map((element, index) => {
+        console.log(inputFilters[element])
         return  (
             <label key={index}>
                 {element}
