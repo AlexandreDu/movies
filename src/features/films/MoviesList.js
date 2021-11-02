@@ -5,7 +5,7 @@ import { Movie } from './Movie'
 import { Pagination } from './Pagination'
 import { PrevNextButtons } from './PrevNextButtons'
 import { Filter } from './Filter'
-import { selectMoviesFiltered, selectLimitPage, selectStatus, selectCurrentPage, changePage } from './moviesSlice'
+import { selectMoviesFiltered, selectLimitPage, selectStatus, selectCurrentPage, changePage, clearFilter } from './moviesSlice'
 
 export const MoviesList = () => {
 
@@ -22,6 +22,8 @@ export const MoviesList = () => {
             dispatch(fetchMovies())
         }
         
+        dispatch(clearFilter())
+        console.log('use effect ')
     }, [status, dispatch])
 
 

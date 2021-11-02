@@ -46,6 +46,10 @@ const moviesSlice = createSlice({
                 state.filters.years.push(action.payload)
             }
 
+        },
+        clearFilter(state, action) {
+            console.log('yuut')
+            state.filters.years = []
         }
 
     },
@@ -69,7 +73,7 @@ const moviesSlice = createSlice({
 
 export default moviesSlice.reducer
 
-export const {changePage, changeLimitPage, addFilter} = moviesSlice.actions
+export const {changePage, changeLimitPage, addFilter, clearFilter} = moviesSlice.actions
 
 export const selectAllMovies = (state) => state.movies.movies
 

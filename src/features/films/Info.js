@@ -6,11 +6,9 @@ export const Info = ({movieIdParsed, activeContent, contentTopic}) => {
     const [infoMovie, setInfoMovie] = useState({})
     
     useEffect(() => {
-        console.log('tiiiit')
         fetch(`https://api.themoviedb.org/3/movie/${movieIdParsed}?api_key=4affe9e3000bf530dc1a6731e68f2bb8&language=en-US`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
            setInfoMovie(data)
         })
     }, [movieIdParsed])
