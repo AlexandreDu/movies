@@ -23,7 +23,7 @@ export const MoviesList = () => {
         }
         
         dispatch(clearFilter())
-        console.log('use effect ')
+
     }, [status, dispatch])
 
 
